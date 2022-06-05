@@ -1,6 +1,4 @@
 import hashlib
-import base64
-import sqlite3
 from flask import current_app
 
 
@@ -45,47 +43,6 @@ def Hash(type, message):
 
     return "Invalid Type"
 
-
-## ENCODE Functions
-def Encode(type, message):
-    if(type=="16"):
-        output = base64.b16encode(message.encode()).decode()
-        return output
-    if(type=="32"):
-        output = base64.b32encode(message.encode()).decode()
-        return output
-    if(type=="64"):
-        output = base64.b64encode(message.encode()).decode()
-        return output
-
-    return "Invalid Type"
-
-## DECODE Functions
-def Decode(type, message):
-    if (type == "16"):
-        output = base64.b16decode(message.encode('ascii')).decode('ascii')
-        return output
-    if (type == "32"):
-        output = base64.b32decode(message.encode('ascii')).decode('ascii')
-        return output
-    if (type == "64"):
-        output = base64.b64decode(message.encode('ascii')).decode('ascii')
-        return output
-
-    return "Invalid Type"
-
-
-# Attacks
-def All_Attacks(cursor):
-    data = cursor.fetchall()
-
-    attacks = []
-
-    for d in data:
-        dict_data = dict(d)
-        attacks.append({"name": dict_data["name"], "description": dict_data["description"]})
-
-    return attacks
 
 
 

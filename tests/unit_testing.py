@@ -3,9 +3,8 @@ from unittest.mock import patch
 
 from flask import current_app
 
-from functions import Crack, Hash, Encode, Decode, All_Attacks
+from functions import Crack, Hash, Encode, Decode
 
-import sqlite3
 
 class UnitTest(unittest.TestCase):
 
@@ -104,79 +103,6 @@ class UnitTest(unittest.TestCase):
         expected = "Invalid Type"
 
         result = Hash('sha512', message)
-        self.assertEqual(expected, result)
-
-
-    # TEST ENCODE FUNCTION with 16 base
-    def test_9_encode_16(self):
-        message = "Hello World"
-        expected = "48656C6C6F20576F726C64"
-
-        result = Encode("16",message)
-
-        self.assertEqual(expected, result)
-
-    # TEST ENCODE FUNCTION with 32 base
-    def test_10_encode_32(self):
-        message = "Hello World"
-        expected = "JBSWY3DPEBLW64TMMQ======"
-
-        result = Encode("32",message)
-
-        self.assertEqual(expected, result)
-
-    # TEST ENCODE FUNCTION with 64 base
-    def test_11_encode_64(self):
-        message = "Hello World"
-        expected = "SGVsbG8gV29ybGQ="
-
-        result = Encode("64", message)
-
-        self.assertEqual(expected, result)
-
-    # TEST ENCODE FUNCTION with invalid Type
-    def test_12_encode_invalid(self):
-        message = "Hello World"
-        expected = "Invalid Type"
-
-        result = Encode("125", message)
-
-        self.assertEqual(expected, result)
-
-    # TEST DECODE FUNCTION with 16 base
-    def test_13_decode_16(self):
-        message = "48656C6C6F20576F726C64"
-        expected = "Hello World"
-
-        result = Decode("16",message)
-
-        self.assertEqual(expected, result)
-
-    # TEST DECODE FUNCTION with 32 base
-    def test_14_decode_32(self):
-        message = "JBSWY3DPEBLW64TMMQ======"
-        expected = "Hello World"
-
-        result = Decode("32",message)
-
-        self.assertEqual(expected, result)
-
-    # TEST DECODE FUNCTION with 64 base
-    def test_15_decode_64(self):
-        message = "SGVsbG8gV29ybGQ="
-        expected = "Hello World"
-
-        result = Decode("64", message)
-
-        self.assertEqual(expected, result)
-
-    # TEST ENCODE FUNCTION with invalid Type
-    def test_16_decode_invalid(self):
-        message = "SGVsbG8gV29ybGQ="
-        expected = "Invalid Type"
-
-        result = Decode("125", message)
-
         self.assertEqual(expected, result)
 
 
