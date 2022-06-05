@@ -3,7 +3,5 @@ click==7.1.2
 Flask==1.1.2
 Flask-RESTful==0.3.8
 base64
-pycryptodome
-pycrypto
 flask_socketio
 pytest
