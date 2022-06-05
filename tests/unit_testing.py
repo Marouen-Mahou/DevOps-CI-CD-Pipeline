@@ -1,8 +1,6 @@
 import unittest
 from unittest.mock import patch
 
-from flask import current_app
-
 from functions import Crack, Hash, Encode, Decode
 
 
