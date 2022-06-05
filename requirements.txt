@@ -6,4 +6,3 @@ base64
 pycryptodome
 pycrypto
 flask_socketio
-pytest
