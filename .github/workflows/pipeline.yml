@@ -17,7 +17,4 @@ jobs:
           pip install -r requirements-dev.txt
       - name: Testing
         run: |
-          coverage run -m pytest
-      - name: Coverage
-        run: |
-            coverage report
+          python -m pytest --import-mode=append tests/
