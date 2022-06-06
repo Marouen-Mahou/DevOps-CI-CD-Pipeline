@@ -13,6 +13,7 @@ test('add like to a post', () => {
             "likes": 1
         }
         
+    
      }
 
      result=postsController.addLike(req)
