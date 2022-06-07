@@ -178,6 +178,8 @@ At the end we have two tasks of our server are running:
 ![Service image](images/service2.PNG?raw=true)
 
 
-## Build
+## Final pipline
+Here is our final pipline execution.
+![Service image](images/finalePipline.png?raw=true)
 
 
